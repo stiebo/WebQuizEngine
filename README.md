@@ -40,7 +40,7 @@ Response (200 OK)
 Create a new quiz.
 
 Request Body:
-```json
+```text
 {
   "title": "<string, not null, not empty>",
   "text": "<string, <not null, not empty>",
@@ -48,8 +48,9 @@ Request Body:
   "answer": [<integer>,<integer>, ...]
 }
 ```
+
 Response (200 OK):
-```json
+```text
 {
   "id": <integer>,
   "title": "<string>",
@@ -63,7 +64,7 @@ Response (200 OK):
 Get a quiz by its id.
 
 Response (200 OK):
-```json
+```text
 {
   "id": <integer>,
   "title": "<string>",
@@ -76,7 +77,7 @@ Response (200 OK):
 
 Get all existing quizzes in pages.
 
-```json
+```text
 {
   "totalPages":1,
   "totalElements":3,
@@ -109,7 +110,7 @@ If the specified quiz does not exist, the server returns 404 (NOT FOUND). If the
 Try to solve a quiz.
 
 Request Body:
-```json
+```text
 {
   "answer": [<integer>, <integer>, ...]
 }
@@ -117,7 +118,7 @@ Request Body:
 Response (200 OK):
 
 If the passed answer is correct:
-```json
+```text
 {
   "success":true,
   "feedback":"Congratulations, you're right!"
@@ -125,7 +126,7 @@ If the passed answer is correct:
 ```
 
 If the answer is incorrect:
-```json
+```text
 {
   "success":false,
   "feedback":"Wrong answer! Please, try again."
@@ -136,7 +137,7 @@ If the answer is incorrect:
 Provides the specified part of all completions of quizzes for the authenticated user.
 
 Response (200 OK):
-```json
+```text
 {
   "totalPages":1,
   "totalElements":5,
